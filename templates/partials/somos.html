@@ -1,0 +1,30 @@
+{% extends 'partials/body.html' %}
+{% load static %}
+{% block contenido %}
+<div class="container my-5">
+    <div class="bg-light p-5 rounded">
+      <img src="{% static 'img/logo.png' %}" width="400" height="341" class="rounded float-start" alt="...">
+      <div class="col-sm-8 py-5 mx-auto">        
+        <h1 class="display-5 fw-normal">Grupo SENA</h1>
+        <p class="fs-5">Este proyecto nace del interés que tiene la asociación asoarte en adentrarse a nuevas tecnologías.
+          El objetivo es  mejorar su proceso de venta, sistematizándolos. Ya que, generalmente en la forma que ellos lo hacen no es de mucha utilidad.
+        </p>
+        <p>Desarrollo de un Aplicativo web de Comercio Electrónico, el cual cuenta con un panel administrativo donde los responsables del aplicativo pueden editar el contenido que quieren mostrar. 
+        </p>
+        <p>El aplicativo web brinda seguridad mediante el uso de ID de inicio de sesión y         contraseña para que ningún usuario no autorizado pueda acceder.
+        </p>
+        <p>El aplicativo web muestra los productos disponibles por categorías. Los clientes pueden agregar, seleccionar y eliminar productos a un carrito de compras, especificando la cantidad de cada artículo. 
+        </p>
+        <p>Para completar el pedido, los clientes deben diligenciar los campos requeridos en el carrito de compras, y de esa forma finalizar el proceso.
+        </p>
+        <p>Los clientes tienen la opción de seguir con el proceso de compra o abandonarlo. 
+        </p>
+        <p>Milagro Mercado Oliveros</p>
+          <p>Carlos Julio Solano Díaz</p>
+        <p>
+          <a class="btn btn-primary" href="/docs/5.2/components/navbar/#offcanvas" role="button">Leer más »</a>
+        </p>
+    </div>
+    </div>
+  </div>
+{% endblock contenido %}

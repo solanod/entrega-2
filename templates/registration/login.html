@@ -1,0 +1,143 @@
+{% extends 'partials/body.html' %} {% block contenido %}
+<style id="compiled-css" type="text/css">
+  .password-icon {
+    float: right;
+    position: relative;
+    margin: -25px 10px 0 0;
+    cursor: pointer;
+  }
+
+  /* EOS */
+</style>
+<section class="vh-100">
+  <div class="container py-5 h-100">
+    <div class="row d-flex align-items-center justify-content-center h-100">
+      <div class="col-md-8 col-lg-7 col-xl-6">
+        <img
+          src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg"
+          class="img-fluid"
+          alt="Phone image"
+        />
+      </div>
+      <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+        <form method="post">
+          {% csrf_token %}
+          <!-- Email input -->
+          <div class="form-outline mb-4">
+            <input type="text" name="username" class="form-control" />
+            <label class="form-label">Usuario</label>
+          </div>
+
+          <!-- Password input -->
+          <div class="form-outline mb-4">
+            <input
+              type="password"
+              name="password"
+              class="form-control password1"
+              value="clave"
+              placeholder=""
+            />
+            <span class="fa fa-fw fa-eye password-icon show-password"></span>
+            <label class="form-label">Contraseña</label>
+          </div>
+
+          <div class="d-flex justify-content-around align-items-center mb-4">
+            <!-- Checkbox -->
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value=""
+                id="form1Example3"
+                checked
+              />
+              <label class="form-check-label" for="form1Example3">
+                Recordarme
+              </label>
+            </div>
+            <a href="{% url 'password_reset' %}">Olvido su Contraseña?</a>
+          </div>
+
+          <!-- Submit button -->
+          <button type="submit" class="btn btn-outline-primary btn-block">
+            Ingresar
+          </button>
+          <a href="{% url 'registro' %}"
+            ><button type="button" class="btn btn-outline-success">
+              Registrar
+            </button></a
+          >
+            <div class="col-12 help-text"> {{error}} </div>
+          <!-- Ayuda  -->
+          <!-- Button trigger modal -->
+          <button
+            type="button"
+            class="btn btn-success"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+          >
+            Ayuda
+          </button>
+
+          <!-- Modal -->
+          <div
+            class="modal fade"
+            id="exampleModal"
+            tabindex="-1"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Ayuda</h5>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  Comuniquese con el administrador al correo 
+                  administrador@asoarte.com 
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    data-bs-dismiss="modal"
+                  >
+                    Cerrar
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+  window.addEventListener("load", function () {
+    // icono para poder interaccionar con el elemento
+    showPassword = document.querySelector(".show-password");
+    showPassword.addEventListener("click", () => {
+      // elementos input de tipo password
+      password1 = document.querySelector(".password1");
+
+      if (password1.type === "text") {
+        password1.type = "password";
+
+        showPassword.classList.remove("fa-eye-slash");
+      } else {
+        password1.type = "text";
+
+        showPassword.classList.toggle("fa-eye-slash");
+      }
+    });
+  });
+</script>
+
+{% endblock contenido %}

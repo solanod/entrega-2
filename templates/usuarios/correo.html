@@ -1,0 +1,60 @@
+{% extends 'partials/body.html' %}
+{% block contenido %}
+<main class="content">
+  <div class="container-fluid p-0">
+    <div class="card">
+        <div class="card-body">
+    <h1 class="h3 mb-3">Cuéntanos tus inquietudes</h1>
+
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-body ">
+                  
+            <form class="row g-3" action="" method="POST">
+              {% csrf_token %}
+                <div class="col-12">
+                  <label for="name" class="form-label">Nombre y Apellido</label>
+                  {{ form.nombre }}
+                  {{ form.nombre.errors }}
+                </div>
+                <div class="col-12">
+                  <label for="email" class="form-label">Correo Electrónico</label>
+                  {{ form.email }}
+                  {{ form.email.errors }}
+                </div>
+                <div class="col-12">
+                  <label for="message" class="form-label">Mensaje</label>
+                  {{ form.message }}
+                  {{ form.message.errors }}
+                </div>
+                &nbsp;
+                <div class="col-12">
+                  <div class="d-flex justify-content-end">
+                    <a href="/cesantias"><button type="button" class="btn btn-danger">Cancelar</button></a>
+                    &nbsp;
+                    <input class="btn btn-primary" type="submit" value="Enviar Mensaje" {% if 'ok' in request.GET %}disabled{% endif %}{% if 'error' in request.GET %}disabled{% endif %}>
+                  </div>
+                </div>
+            </form>
+            {% if 'ok' in request.GET %}
+            <div class="alert alert-success mt-5" role="alert">
+                <strong>El mensaje se ha enviado correctamente</strong>
+            </div>
+        {% endif %}
+
+        {% if 'error' in request.GET %}
+            <div class="alert alert-danger mt-5" role="alert">
+                <strong>El mensaje no ha podido ser enviado. Por favor, intente más tarde</strong>
+            </div>
+        {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+</div>
+  </div>
+</main>
+
+{% endblock %}

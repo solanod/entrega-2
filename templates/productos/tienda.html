@@ -1,0 +1,45 @@
+{% extends 'partials/body.html' %}
+{% block contenido %}
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>Bienvenido a mi sitio, {% if user.is_authenticated %} {{ user.username }}
+    {% else %}
+      Visitante 
+    {% endif %}!</strong> Nuestros productos son exclusivos y solo quedan algunas unidades disponibles. 
+  </div>
+  <div class="col-4">
+  <form method="GET">
+    <div class="input-group">
+      <input class="form-control" type="search" name="buscar" placeholder="Buscar" aria-label="Buscar" value="{{ request.GET.buscar }}">
+      <button class="btn btn-secondary" type="submit">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="width: 24px;height: 24px" data-config-id="auto-svg-2-2">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+        </svg>
+      </button>
+    </div>
+  </form>
+</div>
+<div class="row justify-content-start">
+    <div class="col-8">
+<div class="row row-cols-2 row-cols-md-4 g-2">
+    {% for producto in productos %}
+    <div class="col">
+      <div class="card h-100" >        
+        <img src="{{producto.imagen.url}}" class="card-img-top" alt="{{producto.nombre}}">
+        <div class="card-body">
+          <h5 class="card-title">Nombre: {{producto.nombre}}</h5>
+          <p class="card-text">$ {{producto.valor_venta}}</p>
+          <small class="text-muted">Referencia: {{producto.cod_prod}}</small>                    
+        </div>
+        <div class="card-footer">
+            <a href="{% url 'Add' producto.cod_prod %}" class="btn btn-primary">Agregar al carrito</a>        
+        </div>
+    </div>
+</div>
+    {% endfor %}
+</div>
+</div>
+<div class="col-4">
+    {% include "productos/carrito.html" %}
+</div>
+</div>
+{% endblock contenido %}

@@ -1,0 +1,56 @@
+{% extends 'partials/body.html' %}
+{% load static %}    
+{% block contenido %}  
+<!-- Carousel wrapper -->
+<div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2" class="active" aria-current="true"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3" class=""></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item">
+        <img src="{% static '\img\Artesanos.png' %}" class="d-block w-100" alt=""/>     
+
+        <div class="container">
+          <div class="carousel-caption text-start">
+            <h1>Nuevos Diseños.</h1>
+            <p>Descubre los diseños más recientes y compra con la seguridad.</p>
+            <p><a class="btn btn-lg btn-primary" href="#tienda.html">Ver más</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item active">
+        <img src="{% static 'img/img03.jpg' %}" class="d-block w-100" alt=""/>
+
+        <div class="container">
+          <div class="carousel-caption">
+            <h1>Productos Destacados.</h1>
+            <p>Tejiendo, tallando y pintando creado en Colombia.</p>
+            <p><a class="btn btn-lg btn-primary" href="{% url 'Tienda' %}">Leer más</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'img/img12.webp' %}" class="d-block w-100" alt="3"/>
+
+        <div class="container">
+          <div class="carousel-caption text-end">
+            <h1>Artesanos, Hechos con Amor.</h1>
+            <p>Sabemos que comprar con sentido de pertenencia es un arte que hace del mundo un lugar mejor.</p>
+            <p><a class="btn btn-lg btn-primary" href="{% url 'Tienda' %}">Catalogo</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  <!-- Carousel wrapper -->
+{% endblock contenido %}
