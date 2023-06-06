@@ -21,8 +21,8 @@
               </a>
               <ul class="nav">
                 <li class="nav-item"><a href="{% url 'inicio' %}" class="nav-link active" aria-current="page"><i class="fa-solid fa-home"></i> Inicio</a></li>
-                <li class="nav-item"><a href="{% url 'Tienda' %}" class="nav-link"><i class="fa-solid fa-tachograph-digital"></i> Catalogo</a></li>        
-                <li class="nav-item"><a href="{% url 'correo' %}" class="nav-link"><i class="fa-solid fa-person-chalkboard"></i> Contactenos</a></li>
+                <li class="nav-item"><a href="{% url 'Tienda' %}" class="nav-link"><i class="fa-solid fa-tachograph-digital"></i> Catálogo</a></li>        
+                <li class="nav-item"><a href="{% url 'correo' %}" class="nav-link"><i class="fa-solid fa-person-chalkboard"></i> Contáctenos</a></li>
                 <li class="nav-item"><a href="{% url 'Somos' %}" class="nav-link"><i class="fa-solid fa-book"></i> Sobre Nosotos</a></li>
                 {% if user.is_authenticated %}
                 <li class="nav-item"><a href="{% url 'logout' %}" class="nav-link"><i class="fa-solid fa-right-from-bracket"></i> Salir</a>                  
