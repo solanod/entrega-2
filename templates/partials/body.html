@@ -11,6 +11,7 @@
 <html>
     <head>
         <title>ASOARTE STORE</title>
+        <meta charset = "UTF-8">
     </head>
     <body class"text-muted">
       <nav class=" text-muted navbar navbar-expand-lg navbar-light bg-light">
@@ -46,29 +47,30 @@
   <div class="col-6 col-md-2 mb-3">
   <h5>Sección</h5>
   <ul class="nav flex-column">
-  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Inicio</a></li>
-  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Características</a></li>
-  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Precios</a></li>
+  <li class="nav-item mb-2"><a href="{% url 'inicio' %}" class="nav-link p-0 text-muted">Inicio</a></li>
+  <li class="nav-item mb-2"><a href="{% url 'Somos' %}" class="nav-link p-0 text-muted">Características</a></li>
+  <li class="nav-item mb-2"><a href="{% url 'Tienda' %}" class="nav-link p-0 text-muted">Precios</a></li>
   </ul>
   </div>
   <div class="col-6 col-md-2 mb-3">
   <h5>Sección</h5>
   <ul class="nav flex-column">
-  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Inicio</a></li>
-  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Características</a></li>
-  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Precios</a></li>  
+  <li class="nav-item mb-2"><a href="{% url 'inicio' %}" class="nav-link p-0 text-muted">Inicio</a></li>
+  <li class="nav-item mb-2"><a href="{% url 'Somos' %}" class="nav-link p-0 text-muted">Características</a></li>
+  <li class="nav-item mb-2"><a href="{% url 'Tienda' %}" class="nav-link p-0 text-muted">Precios</a></li>  
   </ul>
   </div>
   <div class="col-6 col-md-2 mb-3">
   <h5>Sección</h5>
   <ul class="nav flex-column">
-  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Inicio</a></li>
-  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Características</a></li>
-  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Precios</a></li>  
+  <li class="nav-item mb-2"><a href="{% url 'inicio' %}" class="nav-link p-0 text-muted">Inicio</a></li>
+  <li class="nav-item mb-2"><a href="{% url 'Somos' %}" class="nav-link p-0 text-muted">Características</a></li>
+  <li class="nav-item mb-2"><a href="{% url 'Tienda' %}" class="nav-link p-0 text-muted">Precios</a></li>  
   </ul>
   </div>
   <div class="col-md-5 offset-md-1 mb-3">
   <form>
+    <nav>
   <h5>Suscríbete a nuestro newsletter</h5>
   <p>Resumen mensual de lo que es nuevo y emocionante de nosotros.</p>
   <div class="d-flex flex-column flex-sm-row w-100 gap-2">
